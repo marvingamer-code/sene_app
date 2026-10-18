@@ -3,76 +3,128 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0f1a14">
-<title>SENE · Chat de voz para jugar Minecraft</title>
+<meta name="theme-color" content="#0d0e0e">
+<meta name="description" content="SENE es una app de llamadas de voz para jugar con tus amigos a distancia. Pensada para Minecraft, sirve con cualquier juego.">
+<title>SENE · Llamadas de voz para jugar con tus amigos</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap">
 <style>
   :root {
     color-scheme: dark;
-    --bg: #0f1a14;
-    --card: #16251c;
-    --line: #243a2c;
-    --text: #eaf3ee;
-    --muted: #9db3a5;
-    --accent: #00e676;
-    --accent-ink: #04210f;
+    --bg: #0d0e0e;
+    --panel: #141414;
+    --line: #262b28;
+    --text: #eef2ef;
+    --muted: #9aa39d;
+    --green: #36c866;
+    --android: #3ddc84;
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; }
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    line-height: 1.55;
+    font-family: 'DM Sans', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.6;
     padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
   }
-  main { max-width: 560px; margin: 0 auto; padding: 48px 20px 64px; }
+  main { max-width: 600px; margin: 0 auto; padding: 48px 22px 64px; }
+
   .logo {
-    width: 72px; height: 72px; border-radius: 20px;
-    background: var(--accent); color: var(--accent-ink);
-    display: grid; place-items: center;
-    font-size: 34px; font-weight: 800; letter-spacing: 1px;
-    margin-bottom: 20px;
+    display: block; width: 96px; height: 96px;
+    border-radius: 24px; border: 1px solid var(--line);
+    margin-bottom: 28px;
   }
-  h1 { font-size: 2.2rem; margin: 0 0 6px; letter-spacing: 1px; }
-  .tagline { color: var(--muted); margin: 0 0 28px; font-size: 1.05rem; }
-  .btn {
-    display: block; text-align: center; text-decoration: none;
-    background: var(--accent); color: var(--accent-ink);
-    font-weight: 700; font-size: 1.1rem;
-    padding: 16px 20px; border-radius: 14px;
+  h1 {
+    font-size: clamp(1.9rem, 6.5vw, 2.6rem);
+    line-height: 1.15; letter-spacing: -0.02em; font-weight: 800;
+    margin: 0 0 16px;
   }
-  .btn:active { transform: scale(0.98); }
-  .version { color: var(--muted); font-size: 0.9rem; text-align: center; margin: 10px 0 0; min-height: 1.4em; }
-  .card {
-    background: var(--card); border: 1px solid var(--line);
-    border-radius: 16px; padding: 18px 20px; margin-top: 28px;
+  .lede { color: var(--muted); font-size: 1.08rem; margin: 0; max-width: 52ch; }
+
+  /* Botón de descarga con el estilo de ClassConnect */
+  .btn-download-android {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: #14181f; color: #fff;
+    padding: 12px 26px; border-radius: 14px;
+    border: 1px solid rgba(54, 200, 102, 0.35);
+    text-decoration: none; margin-top: 28px;
+    transition: transform .3s, box-shadow .3s;
+    box-shadow: 0 8px 24px rgba(54, 200, 102, 0.12);
   }
-  .card h2 { font-size: 1.05rem; margin: 0 0 10px; }
-  .card ol { margin: 0; padding-left: 20px; }
-  .card li { margin: 6px 0; }
-  .card p { margin: 8px 0 0; color: var(--muted); font-size: 0.92rem; }
-  .notes { white-space: pre-line; }
-  footer { margin-top: 36px; color: var(--muted); font-size: 0.85rem; text-align: center; }
+  .btn-download-android:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px rgba(54, 200, 102, 0.25);
+  }
+  .btn-download-android:active { transform: scale(0.98); }
+  .android-icon { width: 30px; height: 30px; fill: var(--android); flex-shrink: 0; }
+  .btn-download-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.4; }
+  .btn-download-title { font-size: 15px; font-weight: 700; }
+  .btn-download-sub { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #9aa4b2; }
+  .shield-icon { width: 13px; height: 13px; stroke: var(--android); fill: none; stroke-width: 2.2; flex-shrink: 0; }
+
+  a:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+
+  section { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 28px; }
+  h2 { font-size: 1.15rem; font-weight: 700; margin: 0 0 10px; }
+  section p { margin: 0 0 12px; color: var(--muted); max-width: 60ch; }
+  section p:last-child { margin-bottom: 0; }
+  ol { margin: 0 0 12px; padding-left: 22px; color: var(--text); }
+  li { margin: 8px 0; }
+  .notes { white-space: pre-line; color: var(--muted); }
+  footer { margin-top: 48px; color: var(--muted); font-size: 0.85rem; }
+
+  @media (max-width: 420px) {
+    .btn-download-android { display: flex; justify-content: center; width: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-download-android { transition: none; }
+    .btn-download-android:hover { transform: none; }
+  }
 </style>
 </head>
 <body>
 <main>
-  <div class="logo">S</div>
-  <h1>SENE</h1>
-  <p class="tagline">Chat de voz liviano para hablar con tus amigos mientras juegan Minecraft en el celular.</p>
+  <img class="logo" src="data:image/jpeg;base64,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" alt="Logo de SENE" width="96" height="96">
+  <h1>Habla con tus amigos mientras juegan, aunque estén lejos</h1>
+  <p class="lede">SENE es una app de llamadas de voz para los juegos que no traen chat de voz. Está pensada para Minecraft, pero puedes usarla con cualquier otro juego.</p>
 
-  <a class="btn" id="download" href="https://github.com/marvingamer-code/sene_app/releases/latest/download/SENE.apk">Descargar SENE para Android</a>
-  <p class="version" id="version"></p>
+  <a class="btn-download-android" id="download" download="sene.apk"
+     href="https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk">
+    <svg viewBox="0 0 24 24" class="android-icon" aria-hidden="true">
+      <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.638.638 0 00-.83.22l-1.88 3.24a11.463 11.463 0 00-9.02 0L5.57 5.67a.643.643 0 00-.87-.2c-.28.18-.37.53-.22.83L6.32 9.5C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z"/>
+    </svg>
+    <div class="btn-download-text">
+      <span class="btn-download-title">Descargar SENE para Android</span>
+      <span class="btn-download-sub">
+        <svg viewBox="0 0 24 24" class="shield-icon" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><polyline points="9,12 11,14 15,10"/></svg>
+        <span id="version">APK oficial · Última versión</span>
+      </span>
+    </div>
+  </a>
 
-  <section class="card" id="notesCard" hidden>
+  <section>
+    <h2>Para qué sirve</h2>
+    <p>Muchos juegos de celular no tienen chat de voz, o no sirve cuando tus amigos están en otro lugar. Con SENE llamas a un amigo o a todo tu grupo y hablan mientras cada uno juega lo suyo.</p>
+    <p>Las llamadas pueden ser privadas o de grupo, y un botón flotante te deja manejar el micrófono sin salir del juego.</p>
+  </section>
+
+  <section>
+    <h2>Hecha para Minecraft, abierta a cualquier juego</h2>
+    <p>No necesitas Minecraft para usarla. Abre SENE, inicia la llamada y vuelve a tu juego, sea cual sea.</p>
+  </section>
+
+  <section id="notesCard" hidden>
     <h2>Novedades</h2>
     <div class="notes" id="notes"></div>
   </section>
 
-  <section class="card">
+  <section>
     <h2>Cómo instalarla</h2>
     <ol>
-      <li>Toca el botón verde y descarga el archivo.</li>
+      <li>Toca el botón de descarga y baja el archivo.</li>
       <li>Ábrelo desde las descargas de tu celular.</li>
       <li>Si Android lo pide, activa «Permitir de esta fuente» y vuelve atrás.</li>
       <li>Toca <strong>Instalar</strong>.</li>
@@ -80,9 +132,9 @@
     <p>Es normal que Android o Google Play Protect muestre un aviso de app no verificada: SENE no se descarga desde Play Store.</p>
   </section>
 
-  <section class="card">
+  <section>
     <h2>Actualizaciones</h2>
-    <p>Cuando haya una versión nueva, la app te lo avisa al abrirla y la descarga desde ahí. Solo tendrás que tocar Instalar.</p>
+    <p>Cuando haya una versión nueva, la app te avisa al abrirla y la descarga desde ahí. Solo tendrás que tocar Instalar.</p>
   </section>
 
   <footer>SENE · hecha por Marvin</footer>
@@ -94,7 +146,7 @@
     .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function (v) {
       if (v.versionName) {
-        document.getElementById('version').textContent = 'Versión ' + v.versionName;
+        document.getElementById('version').textContent = 'APK oficial · Versión ' + v.versionName;
       }
       if (v.apkUrl) {
         document.getElementById('download').href = v.apkUrl;
