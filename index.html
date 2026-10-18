@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1a14">
+<title>SENE · Chat de voz para jugar Minecraft</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0f1a14;
+    --card: #16251c;
+    --line: #243a2c;
+    --text: #eaf3ee;
+    --muted: #9db3a5;
+    --accent: #00e676;
+    --accent-ink: #04210f;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.55;
+    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+  }
+  main { max-width: 560px; margin: 0 auto; padding: 48px 20px 64px; }
+  .logo {
+    width: 72px; height: 72px; border-radius: 20px;
+    background: var(--accent); color: var(--accent-ink);
+    display: grid; place-items: center;
+    font-size: 34px; font-weight: 800; letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  h1 { font-size: 2.2rem; margin: 0 0 6px; letter-spacing: 1px; }
+  .tagline { color: var(--muted); margin: 0 0 28px; font-size: 1.05rem; }
+  .btn {
+    display: block; text-align: center; text-decoration: none;
+    background: var(--accent); color: var(--accent-ink);
+    font-weight: 700; font-size: 1.1rem;
+    padding: 16px 20px; border-radius: 14px;
+  }
+  .btn:active { transform: scale(0.98); }
+  .version { color: var(--muted); font-size: 0.9rem; text-align: center; margin: 10px 0 0; min-height: 1.4em; }
+  .card {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 16px; padding: 18px 20px; margin-top: 28px;
+  }
+  .card h2 { font-size: 1.05rem; margin: 0 0 10px; }
+  .card ol { margin: 0; padding-left: 20px; }
+  .card li { margin: 6px 0; }
+  .card p { margin: 8px 0 0; color: var(--muted); font-size: 0.92rem; }
+  .notes { white-space: pre-line; }
+  footer { margin-top: 36px; color: var(--muted); font-size: 0.85rem; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <div class="logo">S</div>
+  <h1>SENE</h1>
+  <p class="tagline">Chat de voz liviano para hablar con tus amigos mientras juegan Minecraft en el celular.</p>
+
+  <a class="btn" id="download" href="https://github.com/marvingamer-code/sene_app/releases/latest/download/SENE.apk">Descargar SENE para Android</a>
+  <p class="version" id="version"></p>
+
+  <section class="card" id="notesCard" hidden>
+    <h2>Novedades</h2>
+    <div class="notes" id="notes"></div>
+  </section>
+
+  <section class="card">
+    <h2>Cómo instalarla</h2>
+    <ol>
+      <li>Toca el botón verde y descarga el archivo.</li>
+      <li>Ábrelo desde las descargas de tu celular.</li>
+      <li>Si Android lo pide, activa «Permitir de esta fuente» y vuelve atrás.</li>
+      <li>Toca <strong>Instalar</strong>.</li>
+    </ol>
+    <p>Es normal que Android o Google Play Protect muestre un aviso de app no verificada: SENE no se descarga desde Play Store.</p>
+  </section>
+
+  <section class="card">
+    <h2>Actualizaciones</h2>
+    <p>Cuando haya una versión nueva, la app te lo avisa al abrirla y la descarga desde ahí. Solo tendrás que tocar Instalar.</p>
+  </section>
+
+  <footer>SENE · hecha por Marvin</footer>
+</main>
+
+<script>
+  // Muestra la versión y las novedades que están en version.json
+  fetch('version.json?t=' + Date.now(), { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function (v) {
+      if (v.versionName) {
+        document.getElementById('version').textContent = 'Versión ' + v.versionName;
+      }
+      if (v.apkUrl) {
+        document.getElementById('download').href = v.apkUrl;
+      }
+      if (v.notes) {
+        document.getElementById('notes').textContent = v.notes;
+        document.getElementById('notesCard').hidden = false;
+      }
+    })
+    .catch(function () { /* si falla, el botón sigue funcionando con su enlace fijo */ });
+</script>
+</body>
+</html>
