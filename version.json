@@ -1,8 +1,8 @@
 {
-  "versionCode": 9,
-  "versionName": "1.5.3",
+  "versionCode": 10,
+  "versionName": "1.5.4",
   "apkUrl": "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
-  "notes": "Llamadas más claras con señal débil: reconexión automática del audio, cancelación de eco y ruido, ruta de baja latencia y WiFi priorizada. La descarga de actualizaciones ahora se reanuda si se corta el internet.",
-  "sha256": "0BDFA6A4475211547F41F95771014D0C9F0B33F09413C3964C638A66FBE2A176",
+  "notes": "El aviso de actualización ahora dice VOX (antes decía SENE). Se mantiene todo lo de la 1.5.3: llamadas estables con señal débil, cancelación de eco y ruido, y descargas que se reanudan si se corta el internet.",
+  "sha256": "004AF4BB26DB7B2CB855E40E5A7BF400CE0A6DA32BBDB8C0BD9106042D235469",
   "force": false
 }
