@@ -1,8 +1,8 @@
 {
-  "versionCode": 8,
-  "versionName": "1.5.2",
+  "versionCode": 9,
+  "versionName": "1.5.3",
   "apkUrl": "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
-  "sha256": "",
-  "force": false,
-  "notes": "Primera versión de SENE."
+  "notes": "Llamadas más claras con señal débil: reconexión automática del audio, cancelación de eco y ruido, ruta de baja latencia y WiFi priorizada. La descarga de actualizaciones ahora se reanuda si se corta el internet.",
+  "sha256": "0BDFA6A4475211547F41F95771014D0C9F0B33F09413C3964C638A66FBE2A176",
+  "force": false
 }
