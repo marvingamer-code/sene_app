@@ -1,8 +1,8 @@
 {
-  "versionCode": 12,
-  "versionName": "1.5.6",
-  "apkUrl": "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
-  "notes": "¡Novedades en esta actualización! Hemos mejorado tu experiencia en el chat. Ahora puedes:• Enviar archivos tanto en chats privados como en grupos.• Responder mensajes específicos para mantener tus conversaciones más ordenadas.¡Actualiza ahora y prueba las nuevas funciones! ",
-  "sha256": "004AF4BB26DB7B2CB855E40E5A7BF400CE0A6DA32BBDB8C0BD9106042D235469",
-  "force": false
+    "versionCode":  12,
+    "versionName":  "1.5.6",
+    "apkUrl":  "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
+    "notes":  "Arreglado el problema que reiniciaba la descarga al llegar al 100% y decia que el APK estaba danado. Ahora la actualizacion se reanuda si se corta el internet y avisa con claridad si el archivo publicado no coincide. Incluye fotos en el chat privado y en los grupos, emojis y respuestas citando mensajes.",
+    "sha256":  "77EC1D29573DAADBA1525A8B1BE50B121F6A7BAAB60DC4E148115234213C2B52",
+    "force":  false
 }
