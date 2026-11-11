@@ -1,8 +1,8 @@
 {
-    "versionCode":  13,
-    "versionName":  "1.5.6.1",
+    "versionCode":  14,
+    "versionName":  "1.5.7",
     "apkUrl":  "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
-    "notes":  "Arreglado el problema que reiniciaba la descarga al llegar al 100% y decia que el APK estaba danado. Ahora la actualizacion se reanuda si se corta el internet y avisa con claridad si el archivo publicado no coincide. Incluye fotos en el chat privado y en los grupos, emojis y respuestas citando mensajes.",
-    "sha256":  "5420A17E602BD205D82BEF1965DDCFB6A3194475C3883A6B7F3D9532E443ADA8",
+    "notes":  "Chat mejorado: las horas ahora se ven en formato de 12 horas (1:25pm), se pueden enviar notas de voz en el chat privado y en los grupos, desliza a la derecha los mensajes de la otra persona (o a la izquierda los tuyos) para responder, manten presionado un mensaje para copiar, editar o eliminar, y toca el icono de basura arriba para vaciar el chat solo en tu telefono.",
+    "sha256":  "A9545F9F490BBB0190740B2906C909A3FEE8224644B7AD7549FA04F312A8AB10",
     "force":  false
 }
