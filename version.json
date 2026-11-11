@@ -1,6 +1,6 @@
 {
-  "versionCode": 10,
-  "versionName": "1.5.4",
+  "versionCode": 11,
+  "versionName": "1.5.5",
   "apkUrl": "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
   "notes": "El aviso de actualización de VOX. Se mantiene todo lo de la 1.5.3: llamadas estables con señal débil, cancelación de eco y ruido, y descargas que se reanudan si se corta el internet.",
   "sha256": "004AF4BB26DB7B2CB855E40E5A7BF400CE0A6DA32BBDB8C0BD9106042D235469",
