@@ -1,8 +1,8 @@
 {
-    "versionCode":  15,
-    "versionName":  "1.5.7.2",
+    "versionCode":  16,
+    "versionName":  "1.5.7.3",
     "apkUrl":  "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
-    "notes":  "Chat completo: fotos, videos, notas de voz, archivos y álbumes (hasta 25 MB), stickers y GIFs con búsqueda, panel de emojis por categorías, responder citando, editar y eliminar mensajes, borrar para todos (60 segundos en privado, siempre en grupos), vaciar el chat solo para ti, búsqueda dentro del chat, visor de fotos, reproductor de video, miniaturas y progreso de subida, y texto con negrita, cursiva y tachado.",
-    "sha256":  "35F174C03C9EB66F4E9CD6101DF148112F411E6119EEFF567EA16E3AA43D44C4",
+    "notes":  "Nuevo panel de adjuntos con Galería, Cámara, Documentos y Recientes (tus fotos y videos más recientes). Archivos estilo WhatsApp con buscar documento, seleccionar de la galería y buscar audio con reproductor de música integrado. Las burbujas ahora se ajustan al tamaño del mensaje y los stickers y GIFs se envían sin burbuja. Incluye todo lo anterior: fotos, videos, notas de voz, archivos y álbumes hasta 25 MB, responder citando, editar y eliminar mensajes, borrar para todos, vaciar el chat solo para ti, búsqueda, visor de fotos, reproductor de video y texto con formato.",
+    "sha256":  "7A7FAEE0076DA907C706E1B1BF9AA7F63C5C4B3FD0F7FE0F01A40C9C12026F80",
     "force":  false
 }
