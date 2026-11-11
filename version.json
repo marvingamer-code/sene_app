@@ -3,6 +3,6 @@
     "versionName":  "1.5.6.1",
     "apkUrl":  "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
     "notes":  "Arreglado el problema que reiniciaba la descarga al llegar al 100% y decia que el APK estaba danado. Ahora la actualizacion se reanuda si se corta el internet y avisa con claridad si el archivo publicado no coincide. Incluye fotos en el chat privado y en los grupos, emojis y respuestas citando mensajes.",
-    "sha256":  "D2E5043F0511438994D7FC62158D84A0F71488C8B6F01FFA424CDE735E0D5B57",
+    "sha256":  "5420A17E602BD205D82BEF1965DDCFB6A3194475C3883A6B7F3D9532E443ADA8",
     "force":  false
 }
