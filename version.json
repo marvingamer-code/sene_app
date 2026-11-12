@@ -1,8 +1,8 @@
 {
-    "versionCode":  16,
-    "versionName":  "1.5.7.3",
+    "versionCode":  17,
+    "versionName":  "1.5.7.4",
     "apkUrl":  "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
-    "notes":  "Nuevo panel de adjuntos con Galería, Cámara, Documentos y Recientes (tus fotos y videos más recientes). Archivos estilo WhatsApp con buscar documento, seleccionar de la galería y buscar audio con reproductor de música integrado. Las burbujas ahora se ajustan al tamaño del mensaje y los stickers y GIFs se envían sin burbuja. Incluye todo lo anterior: fotos, videos, notas de voz, archivos y álbumes hasta 25 MB, responder citando, editar y eliminar mensajes, borrar para todos, vaciar el chat solo para ti, búsqueda, visor de fotos, reproductor de video y texto con formato.",
-    "sha256":  "7A7FAEE0076DA907C706E1B1BF9AA7F63C5C4B3FD0F7FE0F01A40C9C12026F80",
+    "notes":  "Nuevos ganchitos de enviado y visto: un ganchito al enviar y dos cuando la otra persona abre el mensaje. Los paneles de stickers, GIFs, galería, cámara, documentos y audios ahora se pueden estirar hacia arriba para ver mejor. La cámara abre directamente desde la app (cámara interna) y envía la foto, sin depender de otra aplicación. Los audios muestran su portada (foto de perfil del álbum) y se corrigió la reproducción de audios que antes no sonaban. Incluye todo lo anterior: fotos, videos, notas de voz, archivos y álbumes hasta 25 MB, responder citando, editar y eliminar mensajes, borrar para todos, vaciar el chat solo para ti, búsqueda, visor de fotos, reproductor de video y texto con formato.",
+    "sha256":  "9498B0DB2B051746A04EF73507E7C3FA5E0B24301063DB33B295B646E14CE353",
     "force":  false
 }
