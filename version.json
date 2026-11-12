@@ -1,8 +1,8 @@
 {
-    "versionCode":  17,
-    "versionName":  "1.5.7.4",
+    "versionCode":  18,
+    "versionName":  "1.5.7.5",
     "apkUrl":  "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
-    "notes":  "Nuevos ganchitos de enviado y visto: un ganchito al enviar y dos cuando la otra persona abre el mensaje. Los paneles de stickers, GIFs, galería, cámara, documentos y audios ahora se pueden estirar hacia arriba para ver mejor. La cámara abre directamente desde la app (cámara interna) y envía la foto, sin depender de otra aplicación. Los audios muestran su portada (foto de perfil del álbum) y se corrigió la reproducción de audios que antes no sonaban. Incluye todo lo anterior: fotos, videos, notas de voz, archivos y álbumes hasta 25 MB, responder citando, editar y eliminar mensajes, borrar para todos, vaciar el chat solo para ti, búsqueda, visor de fotos, reproductor de video y texto con formato.",
-    "sha256":  "9498B0DB2B051746A04EF73507E7C3FA5E0B24301063DB33B295B646E14CE353",
+    "notes":  "Chat privado: la cabecera ya no dice 'Chat privado'; ahora muestra si la persona está en línea, escribiendo o desconectada, y la última vez que se conectó en hora de 12 horas. En los grupos la cabecera muestra cuántos miembros están en línea. Mantén presionado un grupo que tú creaste para editar su nombre o eliminarlo; los demás miembros verán el cambio. Borrado real por consenso: cuando borras un mensaje o archivo se oculta solo para ti; cuando la otra persona en privado, o todos en un grupo, también lo borran, se elimina de la base de datos Supabase y sus fotos, videos, audios y archivos del bucket porque ya nadie lo va a ver. Lo mismo al vaciar el chat: en privado se borra cuando ambas personas vacían y en grupo cuando ya vaciaron todos. Editar un mensaje también se guarda en la base de datos. Al eliminar un grupo se borra de la base de datos junto con todo su chat y archivos. Para activar el borrado real hay que ejecutar una vez el archivo server/POLITICAS_SUPABASE.sql en el SQL Editor de Supabase. Incluye todo lo anterior: ganchitos de enviado y visto, paneles ampliables, cámara interna, audios con portada, fotos, videos, notas de voz, archivos y álbumes hasta 25 MB, responder citando, editar y eliminar mensajes, búsqueda y texto con formato.",
+    "sha256":  "1B21BC53D2706682ABC896F96C05192D62DCD23BE94C767BD82628207BA84F22",
     "force":  false
 }
