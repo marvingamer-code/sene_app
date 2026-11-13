@@ -1,8 +1,8 @@
 {
-    "versionCode":  23,
-    "versionName":  "1.5.8.0",
+    "versionCode":  24,
+    "versionName":  "1.5.8.1",
     "apkUrl":  "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
-    "notes":  "Estados de YouTube solo con el video. Se ocultaron la cabecera de YouTube, el título, el canal, los comentarios, los recomendados y los controles: el video ocupa toda el área del estado. Toca la pantalla para pasar al siguiente estado, como en WhatsApp; funciona también con fotos, videos de la galería y audios. Se mantiene todo lo anterior: fotos, videos y audios de la galería, enlaces de YouTube con \"Solo una parte\" (60 segundos) o \"Música completa\", reproducción automática, avance solo al siguiente estado de la misma persona y luego a otra persona, estados de 24 horas con borrado real de la fila y del archivo en el bucket Vox, botón \"Abrir en YouTube\" como respaldo, y la fila \"Estados\" sin la palabra música. Recuerda ejecutar en Supabase server/ESTADOS_SUPABASE.sql, server/POLITICAS_SUPABASE.sql y server/ESTADOS_LIMPIEZA_AUTOMATICA.sql si aún no lo hiciste.",
-    "sha256":  "E9AD229903B1B1DC33119DA2AA8BF7D43350FF32DE97C069A0A76A6D6F0F9267",
+    "notes":  "Corrección de los estados de YouTube. Ya se ve el video otra vez: ahora la app no oculta nada hasta comprobar que el video está reproduciéndose, y en cuanto arranca deja solo el video a pantalla completa, sin cabecera, título, canal, comentarios, recomendados ni controles. El audio arranca solo y se fuerza a quitar el silencio, sin tener que tocar la pantalla. Si YouTube pide un toque, un aviso o iniciar sesión, la página se ve normal para que puedas darle play; una vez que el video está reproduciéndose, tocar la pantalla pasa al siguiente estado, como en WhatsApp. Los videos y audios de la galería también siguen empezando solos y con volumen al entrar al estado. Se mantiene todo lo anterior: fotos, videos y audios de la galería, enlaces de YouTube con \"Solo una parte\" (60 segundos) o \"Música completa\", reproducción automática, avance al siguiente estado de la misma persona y luego a otra persona, estados de 24 horas con borrado real de la fila y del archivo en el bucket Vox, botón \"Abrir en YouTube\" como respaldo, y la fila \"Estados\" sin la palabra música. Recuerda ejecutar en Supabase server/ESTADOS_SUPABASE.sql, server/POLITICAS_SUPABASE.sql y server/ESTADOS_LIMPIEZA_AUTOMATICA.sql si aún no lo hiciste.",
+    "sha256":  "8B60D141A448614212AE770E426E536915E729C23095A69D0E5DFC9674F39E99",
     "force":  false
 }
