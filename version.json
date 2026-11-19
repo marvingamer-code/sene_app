@@ -1,8 +1,8 @@
 {
-    "versionCode": 35,
-    "versionName": "1.5.9.2",
+    "versionCode": 36,
+    "versionName": "1.5.9.3",
     "apkUrl": "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
-    "notes": "Se corrigió la hora de \"última vez\" en chats privados para que muestre la hora correcta y no se quede adelantada o atascada. En Amigos y Grupos se quitó el botón \"Chatear\": ahora tocas la tarjeta para abrir el chat (en Amigos la foto sigue abriendo el perfil y se mantiene la llamada). En Grupos, al mantener presionado: los miembros ven \"Salir del grupo\"; el creador ve \"Editar\" y \"Eliminar\". \"Editar\" permite cambiar el nombre y poner, cambiar o quitar la foto del grupo (la foto se guarda en este teléfono). Se quitó de la pantalla el texto sobre \"servicio SFU de bajo consumo\". Se mantiene todo lo anterior. En Supabase ejecuta solo la función public.vox_cleanup_orphan_files (actualizada para no tocar fotos de perfil/portada) y sus permisos si aún no existe; no hace falta volver a ejecutar los SQL anteriores ni los de estados.",
-    "sha256": "4B57DAC655CAB9858AA8ACDD07B2F40B715382B9F97E219F253A11ED4EF82054",
+    "notes": "Se corrigi\u00f3 la \"\u00faltima vez\" en chats privados para que funcione de verdad: ahora se guarda y actualiza en la base de datos al entrar a la app y se refresca mientras est\u00e1s conectado, y al abrir la app se recibe la \u00faltima vez de tus amigos aunque no est\u00e9n en l\u00ednea. Adem\u00e1s ya no queda atrasada respecto a la hora de los mensajes (se ajusta con la actividad/mensajes m\u00e1s recientes). En Supabase ejecuta solo este cambio en la tabla profiles (una vez): alter table public.profiles add column if not exists last_seen bigint not null default 0; No hace falta volver a ejecutar los SQL anteriores ni los de estados.",
+    "sha256": "72683DFB79D7797F77867AF5993ED6BFD687C609695EB3C3515EE623E970BD06",
     "force": false
 }
