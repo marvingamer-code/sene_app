@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VOX - Soporte</title>
+  <style>
+    :root {
+      --bg: #0f1720;
+      --card: #18232d;
+      --muted: #93a4b3;
+      --text: #ecf4f8;
+      --accent: #34d399;
+      --line: #263746;
+      --danger: #f87171;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(180deg, #0b141b, #121d27);
+      color: var(--text);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: rgba(15, 23, 32, .95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 20px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .panel-title {
+      padding: 14px 16px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .users {
+      max-height: calc(100vh - 170px);
+      overflow: auto;
+    }
+
+    .user {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+    }
+
+    .user:hover {
+      background: #1d2b37;
+    }
+
+    .user.active {
+      background: #203242;
+      border-left: 3px solid var(--accent);
+    }
+
+    .user .name {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .user .meta {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .chat {
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - 170px);
+    }
+
+    .messages {
+      flex: 1;
+      overflow: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .msg {
+      max-width: 78%;
+      padding: 10px 12px;
+      border-radius: 14px;
+      line-height: 1.35;
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .msg.user {
+      align-self: flex-start;
+      background: #243646;
+      border-bottom-left-radius: 4px;
+    }
+
+    .msg.vox {
+      align-self: flex-end;
+      background: #1f5a45;
+      border-bottom-right-radius: 4px;
+    }
+
+    .msg .time {
+      color: #c9d7e1;
+      font-size: 11px;
+      margin-top: 6px;
+      opacity: .85;
+    }
+
+    .composer {
+      border-top: 1px solid var(--line);
+      padding: 14px 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 88px;
+      resize: vertical;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #101b24;
+      color: var(--text);
+      padding: 12px;
+      font: inherit;
+    }
+
+    textarea:focus {
+      outline: 2px solid rgba(52, 211, 153, .35);
+      border-color: var(--accent);
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .primary {
+      background: var(--accent);
+      color: #082016;
+    }
+
+    .ghost {
+      background: #223242;
+      color: var(--text);
+    }
+
+    button:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .error {
+      color: var(--danger);
+    }
+
+    .empty {
+      color: var(--muted);
+      padding: 24px 16px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .users,
+      .chat {
+        max-height: none;
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>VOX · Buzón de sugerencias</h1>
+    <div class="sub">Mensajes enviados desde la app. Responde aquí y el usuario lo verá en el chat “Vox” (solo
+      recepción).</div>
+  </header>
+
+  <div class="wrap">
+    <section class="card">
+      <div class="panel-title">
+        <span>Personas</span>
+        <button class="ghost" id="refreshBtn">Actualizar</button>
+      </div>
+      <div class="users" id="users"></div>
+    </section>
+
+    <section class="card chat">
+      <div class="panel-title">
+        <span id="chatTitle">Selecciona una persona</span>
+        <span class="status" id="count"></span>
+      </div>
+      <div class="messages" id="messages">
+        <div class="empty">Aquí aparecerán los mensajes.</div>
+      </div>
+      <div class="composer">
+        <textarea id="reply" placeholder="Escribe una respuesta para esta persona..." disabled></textarea>
+        <div class="row">
+          <div class="status" id="status">Configura Supabase y pulsa Actualizar.</div>
+          <button class="primary" id="sendBtn" disabled>Enviar respuesta</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const CONFIG = {
+      SUPABASE_URL: 'https://wxxhrkinmlvjhaeoqwok.supabase.co',
+      SUPABASE_ANON_KEY: 'sb_publishable_BFreQJvYrSAxwEisFGjgjw_PqTbMW2q',
+      TABLE: 'vox_support_messages',
+      ADMIN_PIN: 'marvin16' // cambia este PIN antes de subirlo a GitHub
+    };
+    const _pin = prompt('PIN de admin VOX:');
+    if (_pin !== CONFIG.ADMIN_PIN) { document.body.innerHTML = '<div style="padding:40px;color:#fff;font-family:system-ui">Acceso denegado.</div>'; throw new Error('Acceso denegado'); }
+
+    let allMessages = [];
+    let selectedUser = null;
+
+    const usersEl = document.getElementById('users');
+    const messagesEl = document.getElementById('messages');
+    const chatTitleEl = document.getElementById('chatTitle');
+    const countEl = document.getElementById('count');
+    const statusEl = document.getElementById('status');
+    const replyEl = document.getElementById('reply');
+    const sendBtn = document.getElementById('sendBtn');
+    const refreshBtn = document.getElementById('refreshBtn');
+
+    function headers(extra = {}) {
+      const h = { 'apikey': CONFIG.SUPABASE_ANON_KEY, 'Content-Type': 'application/json', ...extra };
+      if (!String(CONFIG.SUPABASE_ANON_KEY).startsWith('sb_')) h['Authorization'] = 'Bearer ' + CONFIG.SUPABASE_ANON_KEY;
+      return h;
+    }
+
+    function fmtDate(ts) {
+      if (!ts) return '';
+      const d = new Date(ts);
+      if (isNaN(d.getTime())) return '';
+      return d.toLocaleString('es-PA', { dateStyle: 'medium', timeStyle: 'short' });
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    function groupByUser(messages) {
+      const map = new Map();
+      for (const m of messages) {
+        const u = (m.username || '').toLowerCase();
+        if (!u) continue;
+        if (!map.has(u)) map.set(u, { username: u, displayName: m.display_name || u, lastAt: 0, lastMsg: '', messages: [] });
+        const g = map.get(u);
+        if (m.display_name) g.displayName = m.display_name;
+        const at = Date.parse(m.created_at || '') || 0;
+        if (at >= g.lastAt) { g.lastAt = at; g.lastMsg = m.message || ''; }
+        g.messages.push(m);
+      }
+      return [...map.values()].sort((a, b) => b.lastAt - a.lastAt);
+    }
+
+    function renderUsers() {
+      const groups = groupByUser(allMessages);
+      if (!groups.length) { usersEl.innerHTML = '<div class="empty">No hay mensajes todavía.</div>'; return; }
+      usersEl.innerHTML = groups.map(g => `
+    <div class="user ${selectedUser === g.username ? 'active' : ''}" data-user="${escapeHtml(g.username)}">
+      <div class="name">${escapeHtml(g.displayName || g.username)} <span style="color:var(--muted);font-weight:500">(@${escapeHtml(g.username)})</span></div>
+      <div class="meta">${escapeHtml(fmtDate(g.lastAt))} · ${escapeHtml(g.lastMsg).slice(0, 60)}</div>
+    </div>`).join('');
+      usersEl.querySelectorAll('.user').forEach(el => el.addEventListener('click', () => {
+        selectedUser = el.dataset.user;
+        renderUsers();
+        renderChat();
+      }));
+    }
+
+    function renderChat() {
+      const groups = groupByUser(allMessages);
+      const g = groups.find(x => x.username === selectedUser);
+      if (!g) {
+        chatTitleEl.textContent = 'Selecciona una persona';
+        countEl.textContent = '';
+        messagesEl.innerHTML = '<div class="empty">Aquí aparecerán los mensajes.</div>';
+        replyEl.disabled = true; sendBtn.disabled = true;
+        return;
+      }
+      chatTitleEl.textContent = `${g.displayName} (@${g.username})`;
+      countEl.textContent = `${g.messages.length} mensaje(s)`;
+      replyEl.disabled = false; sendBtn.disabled = false;
+      messagesEl.innerHTML = g.messages.map(m => {
+        const fromVox = !!m.from_vox;
+        return `<div class="msg ${fromVox ? 'vox' : 'user'}">
+      <div>${escapeHtml(m.message || '')}</div>
+      <div class="time">${fromVox ? 'VOX' : escapeHtml(g.displayName)} · ${escapeHtml(fmtDate(Date.parse(m.created_at || '')))}</div>
+    </div>`;
+      }).join('');
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    async function loadMessages() {
+      statusEl.textContent = 'Cargando...'; statusEl.className = 'status';
+      refreshBtn.disabled = true;
+      try {
+        const url = `${CONFIG.SUPABASE_URL}/rest/v1/${CONFIG.TABLE}?select=id,username,display_name,message,from_vox,created_at&order=created_at.asc&limit=1000`;
+        const res = await fetch(url, { headers: headers() });
+        if (!res.ok) throw new Error('HTTP ' + res.status + ': ' + await res.text());
+        allMessages = await res.json();
+        statusEl.textContent = 'Actualizado ' + new Date().toLocaleTimeString('es-PA');
+        renderUsers();
+        renderChat();
+      } catch (e) {
+        console.error(e);
+        statusEl.textContent = 'Error: ' + (e.message || e);
+        statusEl.className = 'status error';
+      } finally {
+        refreshBtn.disabled = false;
+      }
+    }
+
+    async function sendReply() {
+      const text = replyEl.value.trim();
+      if (!selectedUser || !text) return;
+      sendBtn.disabled = true; statusEl.textContent = 'Enviando...'; statusEl.className = 'status';
+      try {
+        const res = await fetch(`${CONFIG.SUPABASE_URL}/rest/v1/${CONFIG.TABLE}`, {
+          method: 'POST',
+          headers: headers({ 'Prefer': 'return=minimal' }),
+          body: JSON.stringify({ username: selectedUser, display_name: 'VOX', message: text, from_vox: true })
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status + ': ' + await res.text());
+        replyEl.value = '';
+        statusEl.textContent = 'Respuesta enviada.';
+        await loadMessages();
+      } catch (e) {
+        console.error(e);
+        statusEl.textContent = 'Error al enviar: ' + (e.message || e);
+        statusEl.className = 'status error';
+      } finally {
+        sendBtn.disabled = !selectedUser;
+      }
+    }
+
+    refreshBtn.addEventListener('click', loadMessages);
+    sendBtn.addEventListener('click', sendReply);
+    replyEl.addEventListener('keydown', (e) => { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) sendReply(); });
+    loadMessages();
+  </script>
+</body>
+
+</html>
