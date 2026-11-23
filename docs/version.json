@@ -1,8 +1,0 @@
-{
-    "versionCode": 37,
-    "versionName": "1.5.9.4",
-    "apkUrl": "https://github.com/marvingamer-code/sene_app/releases/latest/download/sene.apk",
-    "notes": "Nuevo: bot\u00f3n peque\u00f1o junto a Perfil para enviar sugerencias/arreglos (se abre un caj\u00f3n). Se agreg\u00f3 el chat \"Vox\" en la app (solo recepci\u00f3n, con la foto de la app) donde el usuario recibe respuestas del equipo. Incluye p\u00e1gina web admin (docs/support-admin.html) para ver mensajes por nombre/fecha y responder. En Supabase ejecuta SOLO una vez server/VOX_SOPORTE.sql. Si a\u00fan no lo hiciste, ejecuta tambi\u00e9n: alter table public.profiles add column if not exists last_seen bigint not null default 0; No ejecutes de nuevo los SQL anteriores ni los de estados.",
-    "sha256": "2A374EDA299E306069146CC2AA44EF75FF751CAE16000AE28FC081A976D7C799",
-    "force": false
-}
